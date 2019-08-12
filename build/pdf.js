@@ -124,7 +124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 var pdfjsVersion = '2.0.943';
-var pdfjsBuild = 'dc98bf76';
+var pdfjsBuild = 'dc98bf76e';
 var pdfjsSharedUtil = __w_pdfjs_require__(1);
 var pdfjsDisplayAPI = __w_pdfjs_require__(129);
 var pdfjsDisplayTextLayer = __w_pdfjs_require__(145);
@@ -9664,7 +9664,7 @@ var InternalRenderTask = function InternalRenderTaskClosure() {
 var version, build;
 {
   exports.version = version = '2.0.943';
-  exports.build = build = 'dc98bf76';
+  exports.build = build = 'dc98bf76e';
 }
 exports.getDocument = getDocument;
 exports.LoopbackPort = LoopbackPort;
