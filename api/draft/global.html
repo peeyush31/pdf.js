@@ -98,7 +98,7 @@
 
         
             
-<h4 class="name" id="AbortException"><span class="type-signature">(constant) </span>AbortException<span class="type-signature"></span></h4>
+<h4 class="name" id="AbortException"><span class="type-signature"></span>AbortException<span class="type-signature"></span></h4>
 
 
 
@@ -142,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line487">line 487</a>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line505">line 505</a>
     </li></ul></dd>
     
 
@@ -210,7 +210,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line112">line 112</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line108">line 108</a>
     </li></ul></dd>
     
 
@@ -228,7 +228,7 @@
 
         
             
-<h4 class="name" id="FormatError"><span class="type-signature">(constant) </span>FormatError<span class="type-signature"></span></h4>
+<h4 class="name" id="FormatError"><span class="type-signature"></span>FormatError<span class="type-signature"></span></h4>
 
 
 
@@ -272,7 +272,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line472">line 472</a>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line490">line 490</a>
     </li></ul></dd>
     
 
@@ -407,7 +407,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line541">line 541</a>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line559">line 559</a>
     </li></ul></dd>
     
 
@@ -417,8 +417,6 @@
 
     
 </dl>
-
-
 
 
 
@@ -562,7 +560,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line554">line 554</a>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line572">line 572</a>
     </li></ul></dd>
     
 
@@ -572,8 +570,6 @@
 
     
 </dl>
-
-
 
 
 
@@ -668,7 +664,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line871">line 871</a>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line975">line 975</a>
     </li></ul></dd>
     
 
@@ -691,11 +687,14 @@
 
 
 
-
-
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    A capability object contains:
+- a Promise, resolve and reject methods.
+</div>
+
 
 
 <dl>
@@ -852,7 +851,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line384">line 384</a>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line364">line 364</a>
     </li></ul></dd>
     
 
@@ -862,8 +861,6 @@
 
     
 </dl>
-
-
 
 
 
@@ -1024,7 +1021,7 @@ already populated with data or parameter object.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line226">line 226</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line222">line 222</a>
     </li></ul></dd>
     
 
@@ -1034,8 +1031,6 @@ already populated with data or parameter object.</td>
 
     
 </dl>
-
-
 
 
 
@@ -1067,6 +1062,223 @@ already populated with data or parameter object.</td>
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getInheritableProperty"><span class="type-signature"></span>getInheritableProperty<span class="signature">(dict, key, getArray, stopWhenFound)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get the value of an inheritable property.
+
+If the PDF specification explicitly lists a property in a dictionary as
+inheritable, then the value of the property may be present in the dictionary
+itself or in one or more parents of the dictionary.
+
+If the key is not found in the tree, `undefined` is returned. Otherwise,
+the value for the key is returned or, if `stopWhenFound` is `false`, a list
+of values is returned. To avoid infinite loops, the traversal is stopped when
+the loop limit is reached.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dict</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Dict</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Dictionary from where to start the traversal.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The key of the property to find the value for.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>getArray</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Whether or not the value should be fetched as an
+  array. The default value is `false`.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stopWhenFound</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Whether or not to stop the traversal when
+  the key is found. If set to `false`, we always walk up the entire parent
+  chain, for example to be able to find `\Resources` placed on multiple
+  levels of the tree. The default value is `true`.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line671">line 671</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1182,7 +1394,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line121">line 121</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -1207,6 +1419,197 @@ an instance of IPDFStream.</td>
 
 
 
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toRomanNumerals"><span class="type-signature"></span>toRomanNumerals<span class="signature">(number, lowerCase)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Converts positive integers to (upper case) Roman numerals.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>number</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The number that should be converted.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lowerCase</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Indicates if the result should be converted
+  to lower case letters. The default value is `false`.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line870">line 870</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The resulting Roman number.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1956,7 +2359,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line125">line 125</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line121">line 121</a>
     </li></ul></dd>
     
 
@@ -2083,7 +2486,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line858">line 858</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line803">line 803</a>
     </li></ul></dd>
     
 
@@ -2232,179 +2635,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line818">line 818</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-                
-<h4 class="name" id="GetViewportParameters">GetViewportParameters</h4>
-
-
-
-
-<div class="description">
-    Page getViewport parameters.
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>scale</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The desired scale of the viewport.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>rotation</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">(optional) The desired rotation, in degrees, of
-  the viewport. If omitted it defaults to the page rotation.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>dontFlip</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">(optional) If true, the y-axis will not be
-  flipped. The default value is `false`.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line807">line 807</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line763">line 763</a>
     </li></ul></dd>
     
 
@@ -2524,7 +2755,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line104">line 104</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line100">line 100</a>
     </li></ul></dd>
     
 
@@ -2534,8 +2765,6 @@ parameters. The "url" key is always present.</td>
 
     
 </dl>
-
-
 
 
 
@@ -2627,7 +2856,7 @@ parameters. The "url" key is always present.</td>
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">Array</span>
 
 
             
@@ -2651,7 +2880,7 @@ parameters. The "url" key is always present.</td>
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">Array</span>
 
 
             
@@ -2661,8 +2890,8 @@ parameters. The "url" key is always present.</td>
 
             
 
-            <td class="description last">Used font types in the document (an item
-  is set to true if specific font ID was used in the document).</td>
+            <td class="description last">Used font type in the document (an item is set
+  to true if specific font ID was used in the document).</td>
         </tr>
 
     
@@ -2701,7 +2930,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line206">line 206</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line202">line 202</a>
     </li></ul></dd>
     
 
@@ -2849,7 +3078,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line896">line 896</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line841">line 841</a>
     </li></ul></dd>
     
 
@@ -3040,7 +3269,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line1385">line 1385</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line1314">line 1314</a>
     </li></ul></dd>
     
 
@@ -3125,30 +3354,7 @@ parameters. The "url" key is always present.</td>
 
             
 
-            <td class="description last">A Promise object.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>settled</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">If the Promise has been fulfilled/rejected.</td>
+            <td class="description last">A promise object.</td>
         </tr>
 
     
@@ -3171,7 +3377,7 @@ parameters. The "url" key is always present.</td>
 
             
 
-            <td class="description last">Fulfills the Promise.</td>
+            <td class="description last">Fulfills the promise.</td>
         </tr>
 
     
@@ -3194,7 +3400,7 @@ parameters. The "url" key is always present.</td>
 
             
 
-            <td class="description last">Rejects the Promise.</td>
+            <td class="description last">Rejects the promise.</td>
         </tr>
 
     
@@ -3233,7 +3439,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line855">line 855</a>
+        <a href="shared_util.js.html">shared/util.js</a>, <a href="shared_util.js.html#line959">line 959</a>
     </li></ul></dd>
     
 
@@ -3342,7 +3548,7 @@ parameters. The "url" key is always present.</td>
             
 
             <td class="description last">Rendering viewport obtained by
-                         calling the `PDFPageProxy.getViewport` method.</td>
+                               calling of PDFPage.getViewport method.</td>
         </tr>
 
     
@@ -3554,7 +3760,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line868">line 868</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line813">line 813</a>
     </li></ul></dd>
     
 
@@ -3662,7 +3868,7 @@ parameters. The "url" key is always present.</td>
 
             
 
-            <td class="description last"><a href="global.html#TextStyle">TextStyle</a> objects, indexed by font name.</td>
+            <td class="description last">TextStyles objects, indexed by font name.</td>
         </tr>
 
     
@@ -3701,7 +3907,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line828">line 828</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line773">line 773</a>
     </li></ul></dd>
     
 
@@ -3940,7 +4146,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line836">line 836</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line781">line 781</a>
     </li></ul></dd>
     
 
@@ -4133,7 +4339,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line848">line 848</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line793">line 793</a>
     </li></ul></dd>
     
 
@@ -4163,13 +4369,13 @@ parameters. The "url" key is always present.</td>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Externals</h3><ul><li><a href="external-Promise.html">Promise</a></li></ul><h3>Classes</h3><ul><li><a href="PDFDataRangeTransport.html">PDFDataRangeTransport</a></li><li><a href="PDFDocumentLoadingTask.html">PDFDocumentLoadingTask</a></li><li><a href="PDFDocumentProxy.html">PDFDocumentProxy</a></li><li><a href="PDFPageProxy.html">PDFPageProxy</a></li><li><a href="PDFWorker.html">PDFWorker</a></li><li><a href="RenderTask.html">RenderTask</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AbortException">AbortException</a></li><li><a href="global.html#arrayByteLength">arrayByteLength</a></li><li><a href="global.html#arraysToBytes">arraysToBytes</a></li><li><a href="global.html#createPDFNetworkStream">createPDFNetworkStream</a></li><li><a href="global.html#createPromiseCapability">createPromiseCapability</a></li><li><a href="global.html#createValidAbsoluteUrl">createValidAbsoluteUrl</a></li><li><a href="global.html#FormatError">FormatError</a></li><li><a href="global.html#getDocument">getDocument</a></li><li><a href="global.html#setPDFNetworkStreamFactory">setPDFNetworkStreamFactory</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Externals</h3><ul><li><a href="external-Promise.html">Promise</a></li></ul><h3>Classes</h3><ul><li><a href="AnnotationBorderStyle.html">AnnotationBorderStyle</a></li><li><a href="PDFDataRangeTransport.html">PDFDataRangeTransport</a></li><li><a href="PDFDocumentLoadingTask.html">PDFDocumentLoadingTask</a></li><li><a href="PDFDocumentProxy.html">PDFDocumentProxy</a></li><li><a href="PDFPageProxy.html">PDFPageProxy</a></li><li><a href="PDFWorker.html">PDFWorker</a></li><li><a href="RenderTask.html">RenderTask</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AbortException">AbortException</a></li><li><a href="global.html#arrayByteLength">arrayByteLength</a></li><li><a href="global.html#arraysToBytes">arraysToBytes</a></li><li><a href="global.html#createPDFNetworkStream">createPDFNetworkStream</a></li><li><a href="global.html#createPromiseCapability">createPromiseCapability</a></li><li><a href="global.html#createValidAbsoluteUrl">createValidAbsoluteUrl</a></li><li><a href="global.html#FormatError">FormatError</a></li><li><a href="global.html#getDocument">getDocument</a></li><li><a href="global.html#getInheritableProperty">getInheritableProperty</a></li><li><a href="global.html#setPDFNetworkStreamFactory">setPDFNetworkStreamFactory</a></li><li><a href="global.html#toRomanNumerals">toRomanNumerals</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Sun Aug 11 2019 18:59:29 GMT+0000 (Greenwich Mean Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Aug 12 2019 14:40:08 GMT+0200 (Central European Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>
