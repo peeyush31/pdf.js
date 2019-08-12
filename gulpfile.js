@@ -1213,8 +1213,8 @@ gulp.task('dist-pre',
   var DIST_NAME = 'pdfjs-dist';
   var DIST_DESCRIPTION = 'Generic build of Mozilla\'s PDF.js library.';
   var DIST_KEYWORDS = ['Mozilla', 'pdf', 'pdf.js'];
-  var DIST_HOMEPAGE = 'http://mozilla.github.io/pdf.js/';
-  var DIST_BUGS_URL = 'https://github.com/mozilla/pdf.js/issues';
+  var DIST_HOMEPAGE = 'http://peeyush.github.io/pdf.js/';
+  var DIST_BUGS_URL = 'https://github.com/peeyush31/pdf.js/issues';
   var DIST_LICENSE = 'Apache-2.0';
   var npmManifest = {
     name: DIST_NAME,
